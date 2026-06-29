@@ -1,0 +1,128 @@
+id: software-project
+title: Kickoff and planning for a new service
+turns:
+  - id: t1
+    role: user
+    text: "Kicking off the notifications service. A constraint on this: it has to stay HIPAA-compliant because it touches patient reminders, so no PHI in logs ever."
+  - id: t2
+    role: assistant
+    text: "Logged the hard constraint: HIPAA-compliant, zero PHI in logs. I'll hold every design decision against that. What's the stack?"
+  - id: t3
+    role: user
+    text: "Backend in Go, deployed on the existing EKS cluster in us-east-1. The team is four engineers plus me."
+  - id: t4
+    role: assistant
+    text: "Go on EKS us-east-1, team of five. Noted. What datastore are you thinking?"
+  - id: t5
+    role: user
+    text: "Let's use PostgreSQL 15 for the primary store. Aurora flavor, two read replicas."
+  - id: t6
+    role: assistant
+    text: "Primary store: Aurora PostgreSQL 15 with two read replicas. Queueing?"
+  - id: t7
+    role: user
+    text: "SQS for the send queue, with a dead-letter queue after five retries. Target throughput is 2,000 notifications a minute at peak."
+  - id: t8
+    role: assistant
+    text: "SQS with DLQ at five retries, peak target 2,000/min. What's the delivery deadline for v1?"
+  - id: t9
+    role: user
+    text: "We need v1 in production by March 31. That date is firm — it's tied to a client launch."
+  - id: t10
+    role: assistant
+    text: "v1 production deadline March 31, firm, tied to a client launch. I'll plan backwards from it."
+  - id: t11
+    role: user
+    text: "Sarah owns the templating subsystem, Marcus owns delivery and retries, and Priya owns the metrics pipeline."
+  - id: t12
+    role: assistant
+    text: "Ownership: Sarah/templating, Marcus/delivery+retries, Priya/metrics. Got it."
+  - id: t13
+    role: user
+    text: "For metrics, ship to Datadog, and we want p99 send latency under 800ms as the SLO."
+  - id: t14
+    role: assistant
+    text: "Datadog metrics, p99 send latency SLO < 800ms. Noted."
+  - id: t15
+    role: user
+    text: "Rate-limit per recipient to no more than three notifications an hour to avoid spamming people."
+  - id: t16
+    role: assistant
+    text: "Per-recipient cap: max three per hour. Added to the delivery rules."
+  - id: t17
+    role: user
+    text: "Update on timeline: the client moved their launch, so the v1 production deadline is now April 21, not March 31. Plan around April 21."
+  - id: t18
+    role: assistant
+    text: "Updated the v1 production deadline to April 21 (was March 31). I'll re-baseline the schedule to the new date."
+  - id: t19
+    role: user
+    text: "Good, that gives us breathing room. Add a staging soak test of 72 hours before the cutover."
+  - id: t20
+    role: assistant
+    text: "Added a 72-hour staging soak test as a gate before cutover."
+  - id: t21
+    role: user
+    text: "Let's switch the queue: drop SQS, use Kafka instead since platform is standardizing on it. Same DLQ semantics."
+  - id: t22
+    role: assistant
+    text: "Queue changed: Kafka instead of SQS, keeping DLQ-after-five-retries semantics. Updated the design."
+  - id: t23
+    role: user
+    text: "Marcus is on leave the first week of April, so front-load the delivery work before then."
+  - id: t24
+    role: assistant
+    text: "Noted Marcus's leave (first week of April); delivery work front-loaded ahead of it."
+  - id: t25
+    role: user
+    text: "We also need an on-call rotation. Start it two weeks before launch."
+  - id: t26
+    role: assistant
+    text: "On-call rotation begins two weeks before launch. Who carries the first page?"
+  - id: t27
+    role: user
+    text: "Priya for the first week. Remind me to set up the PagerDuty schedule later."
+  - id: t28
+    role: assistant
+    text: "First on-call: Priya. I'll keep the PagerDuty setup on your reminders."
+  - id: t29
+    role: user
+    text: "Quick recap on owners and the latency SLO?"
+  - id: t30
+    role: assistant
+    text: "Owners: Sarah/templating, Marcus/delivery, Priya/metrics. Latency SLO: p99 < 800ms."
+  - id: t31
+    role: user
+    text: "I'm writing the logging module now. Remind me of the single most important compliance rule I gave you at kickoff so I don't violate it."
+  - id: t32
+    role: assistant
+    text: "Pulling up the kickoff constraint."
+  - id: t33
+    role: user
+    text: "And for the release plan doc: what's the committed v1 production deadline we're planning around?"
+  - id: t34
+    role: assistant
+    text: "Confirming the current committed deadline."
+probes:
+  - id: software-hipaa-stated-once
+    type: stated_once
+    importance: high
+    question: "What is the single hard compliance constraint stated at project kickoff?"
+    expected_answer: "HIPAA compliance — no PHI in logs, ever."
+    plant_turn: t1
+    reference_turns: []
+    target_turns: [t1]
+    distractor_turns: []
+    probe_turn: t32
+    expected_status: live
+  - id: software-deadline-supersession
+    type: supersession
+    importance: high
+    question: "What is the current committed v1 production deadline?"
+    expected_answer: "April 21 (moved from the original March 31)."
+    plant_turn: t17
+    reference_turns: []
+    target_turns: [t17]
+    distractor_turns: [t9]
+    probe_turn: t34
+    expected_status: live

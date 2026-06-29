@@ -1,0 +1,140 @@
+id: academic-advising
+title: Senior-year graduation advising
+turns:
+  - id: t1
+    role: user
+    text: "Hi, I'm mapping out my final year and want to make sure I'm on track to graduate next spring. Can we go through my plan?"
+  - id: t2
+    role: assistant
+    text: "Absolutely. First, from your degree audit: you still have not completed the upper-division Writing-in-the-Discipline requirement, WID 301. It's a hard graduation requirement, and without it you cannot walk — no exceptions. Let's get it scheduled."
+  - id: t3
+    role: user
+    text: "Okay, noted. I'm a computer science major with a math minor, currently at 96 credits with a 3.4 GPA."
+  - id: t4
+    role: assistant
+    text: "Good. You need 120 credits to graduate, so 24 more across your final two semesters. What have you got planned for fall?"
+  - id: t5
+    role: user
+    text: "Fall I'm thinking Algorithms (CS 340), Operating Systems (CS 360), and Linear Algebra (MATH 250)."
+  - id: t6
+    role: assistant
+    text: "That's 9 to 11 credits depending on labs. CS 360 has a CS 245 prerequisite — have you cleared that?"
+  - id: t7
+    role: user
+    text: "Yes, took CS 245 last spring with a B+. I also want to start my senior thesis in the fall."
+  - id: t8
+    role: assistant
+    text: "Great. The thesis is a two-semester sequence, CS 490 and CS 491. Who's your advisor?"
+  - id: t9
+    role: user
+    text: "Professor Reyes is advising me. She said my thesis proposal is due March 15th, so I'll plan my spring around that."
+  - id: t10
+    role: assistant
+    text: "March 15th proposal deadline, noted. What's your thesis topic area?"
+  - id: t11
+    role: user
+    text: "Something in distributed systems — possibly consensus protocols. I'll narrow it with Professor Reyes."
+  - id: t12
+    role: assistant
+    text: "Solid area. For spring, you'll need the remaining credits plus WID 301. Any electives in mind?"
+  - id: t13
+    role: user
+    text: "I'd like Machine Learning (CS 470) and maybe a databases course (CS 415) in spring."
+  - id: t14
+    role: assistant
+    text: "CS 470 has a MATH 250 prerequisite, which you'll satisfy in fall — good sequencing. CS 415 fills your systems breadth."
+  - id: t15
+    role: user
+    text: "What about the capstone? Does the thesis count as my capstone?"
+  - id: t16
+    role: assistant
+    text: "Yes, the CS 490/491 thesis sequence satisfies the capstone requirement, so you won't need a separate project course."
+  - id: t17
+    role: user
+    text: "Quick update from Professor Reyes — the thesis proposal deadline moved. It's no longer March 15th; it's now April 5th. The department pushed the whole cohort's deadline back. So plan around April 5th."
+  - id: t18
+    role: assistant
+    text: "Got it — the proposal deadline is now April 5th, replacing the earlier March 15th date. That gives you a bit more runway in spring."
+  - id: t19
+    role: user
+    text: "Right. Also, I need at least a 3.0 in my major courses to keep my scholarship."
+  - id: t20
+    role: assistant
+    text: "Noted, 3.0 major GPA for the scholarship. You're at 3.4 overall, so stay focused on the CS-heavy semesters."
+  - id: t21
+    role: user
+    text: "I'm also considering studying abroad in summer — a three-week program in Berlin worth 3 credits."
+  - id: t22
+    role: assistant
+    text: "A 3-credit summer program could help, but confirm it transfers as an upper-division elective, not just general credit."
+  - id: t23
+    role: user
+    text: "Good point. I'll check with the registrar. What's my total credit count look like with all this?"
+  - id: t24
+    role: assistant
+    text: "Fall around 11, spring around 13 including WID 301 and the thesis — that should push you past 120. We'll verify the audit."
+  - id: t25
+    role: user
+    text: "Do I need a foreign language credit? I took two years in high school."
+  - id: t26
+    role: assistant
+    text: "For the BS in CS, the language requirement is waived with two years of high school language, so you're clear there."
+  - id: t27
+    role: user
+    text: "Great. When do I apply for graduation?"
+  - id: t28
+    role: assistant
+    text: "The graduation application opens in October and is due by November 15th for spring graduates. Don't miss it."
+  - id: t29
+    role: user
+    text: "Noted, November 15th. Should I meet with Professor Reyes before registration?"
+  - id: t30
+    role: assistant
+    text: "Yes, meet her before fall registration opens August 1st to lock the thesis plan and get her signature."
+  - id: t31
+    role: user
+    text: "Okay. Anything about internships counting for credit?"
+  - id: t32
+    role: assistant
+    text: "You can earn up to 3 internship credits via CS 388, but it won't replace a required course — it's elective only."
+  - id: t33
+    role: user
+    text: "Understood. Let's keep the thesis and WID as my top priorities."
+  - id: t34
+    role: assistant
+    text: "Agreed. I'll put together a semester-by-semester sheet so nothing falls through the cracks."
+  - id: t35
+    role: user
+    text: "One thing I want to be totally sure about before I register — what's the specific graduation requirement you flagged at the very start that I still haven't completed?"
+  - id: t36
+    role: assistant
+    text: "Let me pull up your audit flag before you register."
+  - id: t37
+    role: user
+    text: "And remind me of the current due date for my thesis proposal, so I put the right one in my calendar."
+  - id: t38
+    role: assistant
+    text: "Checking the latest deadline on file."
+probes:
+  - id: academic-advising-grad-requirement-stated-once
+    type: stated_once
+    importance: high
+    question: "Which graduation requirement has the student not yet completed?"
+    expected_answer: "The upper-division Writing-in-the-Discipline requirement, WID 301 — a hard graduation requirement."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t35
+    expected_status: live
+  - id: academic-advising-thesis-deadline-supersession
+    type: supersession
+    importance: high
+    question: "What is the current due date for the student's thesis proposal?"
+    expected_answer: "April 5th (it was moved from the earlier March 15th deadline)."
+    plant_turn: t17
+    reference_turns: []
+    target_turns: [t17]
+    distractor_turns: [t9]
+    probe_turn: t37
+    expected_status: live

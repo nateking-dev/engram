@@ -1,0 +1,128 @@
+id: it-support
+title: Production migration support handoff
+turns:
+  - id: t1
+    role: user
+    text: "Hey, I'm picking up the prod migration tickets. Where do things stand?"
+  - id: t2
+    role: assistant
+    text: "Welcome aboard. A bit of setup detail: the Splunk enterprise license key is SPLK-7H2Q-4M8N-XR55. It lives in 1Password under the item 'Splunk-Prod' -- don't paste it into a Jira ticket or Slack. With that out of the way, the migration is about 60% done."
+  - id: t3
+    role: user
+    text: "Got it. What's the cutover date?"
+  - id: t4
+    role: assistant
+    text: "Tentatively July 9, with a maintenance window of 1am to 4am Pacific. The change ticket is CHG-4821."
+  - id: t5
+    role: user
+    text: "Who's on call that night?"
+  - id: t6
+    role: assistant
+    text: "Dana Reyes is primary, Sam Okonkwo secondary. Escalation goes to the DBA, Lena Park, after 30 minutes."
+  - id: t7
+    role: user
+    text: "Are backups verified?"
+  - id: t8
+    role: assistant
+    text: "Nightly snapshots to the S3 bucket 'acme-db-backups', 14-day retention. The last restore test passed June 22 in 47 minutes."
+  - id: t9
+    role: user
+    text: "Okay. Which box is the new app server?"
+  - id: t10
+    role: assistant
+    text: "The new app server is app-prod-02 at 10.20.4.15, running Ubuntu 22.04 with 16 vCPU. The load balancer points port 443 there."
+  - id: t11
+    role: user
+    text: "What are the firewall rules?"
+  - id: t12
+    role: assistant
+    text: "Inbound 443 and 22 only; 22 is restricted to the bastion at 10.20.0.5. Outbound to the database on 5432."
+  - id: t13
+    role: user
+    text: "TLS certs?"
+  - id: t14
+    role: assistant
+    text: "Wildcard *.acme.io from DigiCert, expires March 3 2027. Auto-renew via ACME is NOT set up -- it's manual renewal, and I've created a calendar reminder."
+  - id: t15
+    role: user
+    text: "Monitoring coverage?"
+  - id: t16
+    role: assistant
+    text: "Datadog agent on all hosts, CPU alert at 85% for 5 minutes, disk alert at 90%. The PagerDuty service is 'app-prod'."
+  - id: t17
+    role: user
+    text: "Heads up -- networking told me there was an IP reassignment this morning. Can you reconcile the app server?"
+  - id: t18
+    role: assistant
+    text: "You're right, I just confirmed with networking. The app server has been rebuilt as app-prod-03 at 10.20.4.27 -- the old app-prod-02 at 10.20.4.15 is decommissioned. The load balancer and DNS A record now point to 10.20.4.27. Use that going forward."
+  - id: t19
+    role: user
+    text: "Thanks, update the runbook."
+  - id: t20
+    role: assistant
+    text: "Runbook updated to version 1.4, change logged at 9:52am."
+  - id: t21
+    role: user
+    text: "What about the staging environment?"
+  - id: t22
+    role: assistant
+    text: "Staging is app-stg-01 at 10.30.1.8, refreshed weekly from a sanitized prod dump every Sunday at 3am."
+  - id: t23
+    role: user
+    text: "Any open vulnerabilities?"
+  - id: t24
+    role: assistant
+    text: "Two medium CVEs in the nginx build, patch scheduled in the same maintenance window. No criticals."
+  - id: t25
+    role: user
+    text: "How are secrets handled?"
+  - id: t26
+    role: assistant
+    text: "HashiCorp Vault, namespace 'acme-prod', tokens have a 1-hour TTL, and DB credentials are dynamically issued."
+  - id: t27
+    role: user
+    text: "Logging retention?"
+  - id: t28
+    role: assistant
+    text: "App logs are 30 days hot in Splunk, then 1 year in S3 Glacier. Audit logs are kept 7 years for compliance."
+  - id: t29
+    role: user
+    text: "What's the rollback plan?"
+  - id: t30
+    role: assistant
+    text: "Blue-green: keep the old stack warm for 24 hours, with DNS TTL dropped to 60 seconds for fast failback."
+  - id: t31
+    role: user
+    text: "Quick check -- I'm filing the Splunk renewal and need the license key and exactly where it's stored. What are they?"
+  - id: t32
+    role: assistant
+    text: "Let me pull that from my earlier notes and confirm the key and its storage location."
+  - id: t33
+    role: user
+    text: "And confirm the current production app server hostname and IP for the load balancer config."
+  - id: t34
+    role: assistant
+    text: "Checking the latest networking reconciliation to give you the current hostname and IP."
+probes:
+  - id: it-support-splunk-license-stated-once
+    type: stated_once
+    importance: high
+    question: "What is the Splunk enterprise license key and exactly where is it stored?"
+    expected_answer: "SPLK-7H2Q-4M8N-XR55, stored in 1Password under the item 'Splunk-Prod'."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t31
+    expected_status: live
+  - id: it-support-app-server-ip-supersession
+    type: supersession
+    importance: high
+    question: "What is the current production app server hostname and IP for the load balancer config?"
+    expected_answer: "app-prod-03 at 10.20.4.27."
+    plant_turn: t18
+    reference_turns: []
+    target_turns: [t18]
+    distractor_turns: [t10]
+    probe_turn: t33
+    expected_status: live

@@ -1,0 +1,134 @@
+id: legal-contract
+title: Negotiating a SaaS master services agreement
+turns:
+  - id: t1
+    role: user
+    text: "We're finalizing the MSA with the vendor for the analytics platform. I want to walk through the open terms before I send redlines back today."
+  - id: t2
+    role: assistant
+    text: "On the basics first: the agreement is governed by the laws of the State of Delaware, with exclusive jurisdiction in the Delaware Court of Chancery. That choice affects how every other clause gets interpreted, so we should keep it consistent throughout."
+  - id: t3
+    role: user
+    text: "Good, Delaware works for us. Let's start with the liability cap. What are they proposing?"
+  - id: t4
+    role: assistant
+    text: "Their draft caps aggregate liability at 12 months of fees paid. That's standard for SaaS, but I'd push for the cap to exclude breaches of confidentiality and data-security obligations, which should be uncapped or super-capped."
+  - id: t5
+    role: user
+    text: "Agreed, carve out the data breach exposure. What's the term length they want?"
+  - id: t6
+    role: assistant
+    text: "They propose an initial term of two years with auto-renewal for successive one-year periods. I'd add a 60-day non-renewal notice window so we're not locked in by inertia."
+  - id: t7
+    role: user
+    text: "Add the 60-day notice. Now the payment terms, this is the one I care about. What's in the draft?"
+  - id: t8
+    role: assistant
+    text: "The current draft sets payment as net 30 from invoice date, annual fees billed upfront at the start of each term year. There's also a 1.5 percent monthly late fee on overdue amounts."
+  - id: t9
+    role: user
+    text: "Net 30 is tight for our AP cycle. For now let's note net 30 but I'll want to revisit it. What about the SLA?"
+  - id: t10
+    role: assistant
+    text: "The SLA commits to 99.9 percent monthly uptime with service credits: 10 percent of monthly fees below 99.9, scaling to 30 percent below 99.0. I'd ask for credits to be claimable without a written request, applied automatically."
+  - id: t11
+    role: user
+    text: "Push for automatic credits. Do they have a data processing addendum?"
+  - id: t12
+    role: assistant
+    text: "Yes, there's a DPA attached covering GDPR and CCPA, with the vendor as processor. It lists sub-processors and a 30-day notice for adding new ones, which gives us a right to object."
+  - id: t13
+    role: user
+    text: "We'll want that objection right to have teeth, with a termination option if we can't agree on a sub-processor."
+  - id: t14
+    role: assistant
+    text: "Good instinct. I'll draft language giving you the right to terminate the affected services without penalty if a new sub-processor isn't acceptable and they won't accommodate. That ties back to the data-security carve-out we discussed."
+  - id: t15
+    role: user
+    text: "What about IP ownership of the configurations and reports we build in the platform?"
+  - id: t16
+    role: assistant
+    text: "The draft says the vendor owns the platform IP, you own your data, and outputs like reports are licensed to you. I'd clarify that dashboards and configurations you create are your property, not just licensed, to avoid lock-in disputes."
+  - id: t17
+    role: user
+    text: "Let's revisit payment terms now that I've checked with finance. They need more runway, so change the payment terms from net 30 to net 60 from invoice date. Make net 60 the position in our redlines."
+  - id: t18
+    role: assistant
+    text: "Understood, I'm updating our position so payment is net 60 from invoice date, superseding the net 30 in their draft. I'll also propose the late fee only begins accruing after the net 60 window, and keep the upfront annual billing otherwise intact."
+  - id: t19
+    role: user
+    text: "Perfect. Will net 60 be a hard sell for them?"
+  - id: t20
+    role: assistant
+    text: "Mid-market vendors often accept net 45 to net 60 for an annual prepay, especially with a multi-year term. If they resist, a fallback is net 60 in exchange for a modest early-payment discount option, but we lead with the straight net 60 ask."
+  - id: t21
+    role: user
+    text: "Good. What's the indemnification structure?"
+  - id: t22
+    role: assistant
+    text: "Mutual indemnities: they cover third-party IP infringement claims arising from the platform, you cover misuse of the service. I'd make sure their IP indemnity isn't watered down by broad exclusions and includes defense costs."
+  - id: t23
+    role: user
+    text: "Add defense costs explicitly. Is there a warranty section?"
+  - id: t24
+    role: assistant
+    text: "There's a limited warranty that the service will materially conform to the documentation, with repair-or-replace as the remedy. I'd add that persistent non-conformance gives you a termination-and-refund right for the unused prepaid period."
+  - id: t25
+    role: user
+    text: "Yes, we need an exit if the product doesn't work. What about termination for convenience?"
+  - id: t26
+    role: assistant
+    text: "Their draft only allows termination for cause. I'd request a termination-for-convenience right with, say, 90 days notice, even if it forfeits the remaining prepaid fees. It's a useful safety valve."
+  - id: t27
+    role: user
+    text: "Let's ask for it but I won't die on that hill. How's the confidentiality clause?"
+  - id: t28
+    role: assistant
+    text: "It's mutual and reasonable, surviving three years post-termination, with the usual carve-outs for public or independently developed information. Trade secrets stay protected indefinitely, which is good."
+  - id: t29
+    role: user
+    text: "Okay. Anything on assignment and change of control?"
+  - id: t30
+    role: assistant
+    text: "The draft lets either party assign on a change of control without consent. Given the data sensitivity, I'd require your consent if they're acquired by a competitor of yours. That pairs well with the sub-processor objection right."
+  - id: t31
+    role: user
+    text: "Add the competitor consent. I think that covers the major points, can you assemble the redline summary?"
+  - id: t32
+    role: assistant
+    text: "Will do. I'll compile the carve-outs, the SLA auto-credits, the IP clarifications, the indemnity defense costs, termination rights, and the revised commercial terms into a clean summary for you to send."
+  - id: t33
+    role: user
+    text: "Before you send it, remind me which state's law governs this agreement and where disputes are heard, I want to double-check the cover note."
+  - id: t34
+    role: assistant
+    text: "Let me look back through our discussion for the governing-law detail."
+  - id: t35
+    role: user
+    text: "And confirm the payment terms we're putting forward in the redlines, after the change finance asked for."
+  - id: t36
+    role: assistant
+    text: "Let me check back through the conversation for our current position on payment terms."
+probes:
+  - id: legal-contract-governing-law-stated-once
+    type: stated_once
+    importance: high
+    question: "Which state's law governs the agreement and where are disputes heard?"
+    expected_answer: "Delaware law, with exclusive jurisdiction in the Delaware Court of Chancery."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t34
+    expected_status: live
+  - id: legal-contract-payment-terms-supersession
+    type: supersession
+    importance: high
+    question: "What payment terms are we putting forward in the redlines?"
+    expected_answer: "Net 60 from invoice date"
+    plant_turn: t17
+    reference_turns: []
+    target_turns: [t17]
+    distractor_turns: [t8]
+    probe_turn: t36
+    expected_status: live

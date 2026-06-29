@@ -1,0 +1,128 @@
+id: pet-care
+title: Arranging care for two dogs during travel
+turns:
+  - id: t1
+    role: user
+    text: "Hi! I'm setting up care for our two dogs while we're in Portugal. Can you keep track of all the details?"
+  - id: t2
+    role: assistant
+    text: "Of course. One for Biscuit's record: Biscuit, the older beagle, is severely allergic to penicillin-class antibiotics -- amoxicillin gives him hives and once caused facial swelling. If any vet needs to medicate him, that whole class is off-limits; they have to use a non-penicillin alternative. Now, who's the second dog?"
+  - id: t3
+    role: user
+    text: "That's Maple, our 2-year-old border collie. Very high energy."
+  - id: t4
+    role: assistant
+    text: "Got it. Maple needs at least two 30-minute walks a day or she gets destructive. I'll note that her harness is the red no-pull one by the back door."
+  - id: t5
+    role: user
+    text: "Feeding -- do both eat the same kibble?"
+  - id: t6
+    role: assistant
+    text: "Biscuit gets 1 cup of the senior formula twice daily, and Maple gets 1.5 cups of the active blend. Both at 7am and 6pm."
+  - id: t7
+    role: user
+    text: "Treats are limited -- Biscuit's watching his weight. He's 32 lbs and the vet wants him at 28."
+  - id: t8
+    role: assistant
+    text: "Noted: max two training treats a day for Biscuit. Maple can have a few more."
+  - id: t9
+    role: user
+    text: "What vet info do you have?"
+  - id: t10
+    role: assistant
+    text: "Dr. Huang at Cedar Animal Hospital, 555-0143. And for boarding while you're away, you've got both dogs at Happy Tails Kennel from July 12 through July 19, drop-off at 9am."
+  - id: t11
+    role: user
+    text: "What about an emergency vet after hours?"
+  - id: t12
+    role: assistant
+    text: "Riverside Emergency Vet, open 24/7, 555-0199, about 12 minutes from the house."
+  - id: t13
+    role: user
+    text: "Are the microchip numbers on file?"
+  - id: t14
+    role: assistant
+    text: "Yes, Biscuit's chip starts 985112, and both are registered with HomeAgain. They also have ID tags on their collars."
+  - id: t15
+    role: user
+    text: "Maple's training -- any commands we use?"
+  - id: t16
+    role: assistant
+    text: "She responds to 'place', 'leave it', and a hand signal for down. The clicker is in the kitchen drawer."
+  - id: t17
+    role: user
+    text: "Change of plans -- our flights moved, so the boarding needs to shift. Can you update it?"
+  - id: t18
+    role: assistant
+    text: "Done. I've rebooked both dogs at Happy Tails for July 15 through July 22, still a 9am drop-off. The July 12 to 19 reservation is cancelled -- the new dates are July 15 to 22. Happy Tails confirmed by email."
+  - id: t19
+    role: user
+    text: "Great. Did the deposit transfer over?"
+  - id: t20
+    role: assistant
+    text: "Yes, the $120 deposit moved to the new booking, with a balance of $340 due at drop-off."
+  - id: t21
+    role: user
+    text: "House stuff -- plants and mail?"
+  - id: t22
+    role: assistant
+    text: "Our neighbor Tomas waters the plants Tuesdays and Fridays, and the mail is held at the post office until July 23."
+  - id: t23
+    role: user
+    text: "Does Biscuit have a joint supplement?"
+  - id: t24
+    role: assistant
+    text: "A glucosamine chew with breakfast, one per day. The refill is at the Cedar pharmacy, about 10 days left."
+  - id: t25
+    role: user
+    text: "Maple gets anxious -- anything that helps?"
+  - id: t26
+    role: assistant
+    text: "A snug thunder shirt during storms and her crate covered with the gray blanket. No sedatives."
+  - id: t27
+    role: user
+    text: "Is any grooming due?"
+  - id: t28
+    role: assistant
+    text: "Maple's nail trim is overdue; Happy Tails offers it for $18 during the stay if you want to add it."
+  - id: t29
+    role: user
+    text: "Sure, add it. Will we get photos?"
+  - id: t30
+    role: assistant
+    text: "The kennel sends a daily photo update around 5pm to your email."
+  - id: t31
+    role: user
+    text: "One more safety check -- if a vet wants to give Biscuit antibiotics, is there anything they absolutely must avoid, and what happens if he gets it?"
+  - id: t32
+    role: assistant
+    text: "Let me check my notes and confirm Biscuit's medication restriction for you."
+  - id: t33
+    role: user
+    text: "And remind me of the exact, current boarding dates at Happy Tails so I can tell my dad, who's dropping them off."
+  - id: t34
+    role: assistant
+    text: "Checking the latest booking to give you the current drop-off and pick-up dates."
+probes:
+  - id: pet-care-biscuit-allergy-stated-once
+    type: stated_once
+    importance: high
+    question: "If a vet wants to give Biscuit antibiotics, what must they avoid and what happens if he gets it?"
+    expected_answer: "Penicillin-class antibiotics (e.g. amoxicillin); they cause hives and facial swelling. A non-penicillin alternative must be used."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t31
+    expected_status: live
+  - id: pet-care-boarding-dates-supersession
+    type: supersession
+    importance: high
+    question: "What are the exact, current boarding dates at Happy Tails Kennel?"
+    expected_answer: "July 15 through July 22, with a 9am drop-off."
+    plant_turn: t18
+    reference_turns: []
+    target_turns: [t18]
+    distractor_turns: [t10]
+    probe_turn: t33
+    expected_status: live

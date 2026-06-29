@@ -1,0 +1,134 @@
+id: financial-planning
+title: Building a household financial plan
+turns:
+  - id: t1
+    role: assistant
+    text: "Glad to be working on your plan. Before we get into allocations, I want to capture the non-negotiable constraints around your money. What should I know first?"
+  - id: t2
+    role: user
+    text: "Here's the situation with our money: my daughter Mara has special needs, and her care is funded through a third-party special-needs trust. Nothing we invest can name her as a direct beneficiary or pay to her directly — it would disqualify her from benefits. All beneficiary designations route to the trust, not to Mara personally."
+  - id: t3
+    role: assistant
+    text: "Understood, and that's now a hard rule across every account: beneficiary designations flow to the special-needs trust, never directly to Mara. I'll verify each account against that. What accounts are we working with?"
+  - id: t4
+    role: user
+    text: "A joint brokerage, my 401k, my wife's 403b, two Roth IRAs, and a 529 for our son Theo. Combined, call it about $1.1 million."
+  - id: t5
+    role: assistant
+    text: "Got it — joint brokerage, your 401k, spouse 403b, two Roths, and Theo's 529, roughly $1.1M total. What's your current 401k contribution?"
+  - id: t6
+    role: user
+    text: "I'm putting in 8% with a 4% employer match. I'd like to push that higher this year if the budget allows."
+  - id: t7
+    role: assistant
+    text: "8% plus a 4% match is a solid base; we can model raising it. Your wife's 403b?"
+  - id: t8
+    role: user
+    text: "She does 6%, no match unfortunately. We also keep about $40,000 in an emergency fund in a high-yield savings at 4.3%."
+  - id: t9
+    role: user
+    text: "On risk, put me down as aggressive — I'm comfortable with an 85/15 stock-to-bond split. I don't panic in downturns."
+  - id: t10
+    role: assistant
+    text: "Logged as aggressive, 85/15 equity-to-bond. With a long horizon that's defensible. What are your big goals and timelines?"
+  - id: t11
+    role: user
+    text: "Retire in about 18 years, Theo's college in 10, and we want to renovate the house in maybe 3 years, around $80,000."
+  - id: t12
+    role: assistant
+    text: "Three goals: retirement in ~18 years, college in ~10, renovation ~$80k in ~3 years. The renovation is short enough we'll keep that money conservative. Any debts?"
+  - id: t13
+    role: user
+    text: "A mortgage, $310,000 left at 3.1%, and one car loan, $14,000 at 5%. No credit-card debt."
+  - id: t14
+    role: assistant
+    text: "At 3.1% the mortgage is cheap, so no rush to prepay; the car loan we can knock out if you like. What's your combined income?"
+  - id: t15
+    role: user
+    text: "About $240,000 gross combined. We max the Roths most years and try to save another $1,500 a month into the brokerage."
+  - id: t16
+    role: assistant
+    text: "Strong savings rate. Let me note a hard liquidity need here — I need to flag any date you must have cash available, since that overrides allocation."
+  - id: t17
+    role: user
+    text: "Yes — Theo's first tuition payment of $28,000 is due on August 1st, 2027. That cash has to be liquid and safe by then, no exceptions."
+  - id: t18
+    role: assistant
+    text: "Flagged: $28,000 liquid and capital-protected by August 1st, 2027 for Theo's tuition. I'll carve that into short-term Treasuries maturing before that date. Now, tax situation — any carryforwards?"
+  - id: t19
+    role: user
+    text: "We have about $6,000 in capital-loss carryforward from 2022. And we usually itemize because of charitable giving."
+  - id: t20
+    role: assistant
+    text: "Noted the $6k loss carryforward and that you itemize. We can bunch charitable gifts to optimize. Insurance — life and disability covered?"
+  - id: t21
+    role: user
+    text: "Term life, $1 million on me, $500k on my wife. Long-term disability through my employer. We should revisit the coverage amounts given Mara's needs."
+  - id: t22
+    role: assistant
+    text: "Agreed, we'll revisit coverage with the trust in mind — the trust should be the life-insurance beneficiary too, consistent with the rule. Let me revise one thing we set earlier."
+  - id: t23
+    role: user
+    text: "Actually, yes — change my risk tolerance. After thinking it over with my wife, we want to move to moderate, a 60/40 stock-to-bond split. The 85/15 felt too aggressive once we mapped the goals. Use 60/40 going forward."
+  - id: t24
+    role: assistant
+    text: "Updated: target allocation is now moderate, 60/40 equity-to-bond, replacing the earlier 85/15. I'll rebuild the model glide path around 60/40. The short-term buckets stay conservative regardless."
+  - id: t25
+    role: user
+    text: "Good. Keep the renovation and tuition money out of equities entirely though."
+  - id: t26
+    role: assistant
+    text: "Absolutely — renovation and tuition funds in cash and short Treasuries, fully outside equities. The 60/40 applies to the long-horizon retirement assets. Should I rebalance the brokerage now or wait for the new contributions?"
+  - id: t27
+    role: user
+    text: "Rebalance gradually to avoid a big tax hit, using the new contributions and the loss carryforward."
+  - id: t28
+    role: assistant
+    text: "Tax-aware gradual rebalance it is, harvesting against the carryforward. I'll draft the new target weights this week. Anything on estate documents?"
+  - id: t29
+    role: user
+    text: "Our will and the trust were updated last year by our attorney, Diane Okafor. The estate side is current."
+  - id: t30
+    role: assistant
+    text: "Good, I'll coordinate with Diane if any beneficiary forms need her sign-off. I'll prepare the investment policy statement next."
+  - id: t31
+    role: user
+    text: "Before you finalize the investment policy statement, I want the allocation to reflect what we agreed today, not the old number."
+  - id: t32
+    role: assistant
+    text: "Understood — I'll confirm the agreed allocation before the IPS is finalized."
+  - id: t33
+    role: user
+    text: "So for the retirement portfolio, what stock-to-bond split should the IPS state as our current target?"
+  - id: t34
+    role: assistant
+    text: "Pulling your current target allocation from the plan now."
+  - id: t35
+    role: user
+    text: "And for the beneficiary forms I'm about to sign — who or what should be named as beneficiary, given the situation with our daughter?"
+  - id: t36
+    role: assistant
+    text: "Checking the beneficiary rule on file before you sign anything."
+probes:
+  - id: financial-planning-beneficiary-stated-once
+    type: stated_once
+    importance: high
+    question: "Who or what must be named as beneficiary on the accounts, given the family's situation?"
+    expected_answer: "The third-party special-needs trust — never the daughter Mara directly, or it would disqualify her from benefits."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t36
+    expected_status: live
+  - id: financial-planning-risk-supersession
+    type: supersession
+    importance: high
+    question: "What is the current target stock-to-bond allocation for the retirement portfolio?"
+    expected_answer: "Moderate, 60/40 stock-to-bond (revised down from the earlier aggressive 85/15)."
+    plant_turn: t23
+    reference_turns: []
+    target_turns: [t23]
+    distractor_turns: [t9]
+    probe_turn: t34
+    expected_status: live

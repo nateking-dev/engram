@@ -1,0 +1,134 @@
+id: fitness-coaching
+title: Onboarding a new personal-training client
+turns:
+  - id: t1
+    role: assistant
+    text: "Welcome to the coaching program! Before we build your plan, I want a full picture of your health and goals. Let's start with anything I absolutely need to train around."
+  - id: t2
+    role: user
+    text: "One thing to build around: I had ACL reconstruction on my right knee two years ago. It's stable now, but my surgeon said no deep loaded squats past 90 degrees and no plyometrics on that leg. Please program around that permanently."
+  - id: t3
+    role: assistant
+    text: "Got it, and that's now a hard constraint in your file — right-knee ACL repair, no deep loaded squats past 90 degrees, no single-leg plyometrics. We'll build strength without violating that. What's your main goal?"
+  - id: t4
+    role: user
+    text: "I want to get stronger and leaner. I'm 6 feet, currently 205 pounds, and I'd feel best around 185."
+  - id: t5
+    role: assistant
+    text: "Clear target: from 205 toward a leaner 185 while building strength. That's a reasonable 20-pound recomposition. How many days a week can you realistically train?"
+  - id: t6
+    role: user
+    text: "Four days. I'm free early mornings, around 6am, Monday through Thursday usually."
+  - id: t7
+    role: assistant
+    text: "Perfect, a 4-day upper/lower split fits well with 6am sessions Monday to Thursday. Do you have a home gym or a commercial gym?"
+  - id: t8
+    role: user
+    text: "Commercial gym, the Iron District on 5th. Full rack, dumbbells to 100, cables, the works. No specialty bars though."
+  - id: t9
+    role: assistant
+    text: "Great, full equipment to work with. Let's set your weekly running volume too — I'd like to start your conditioning at 10 miles per week of easy zone-2 running, split across three short runs."
+  - id: t10
+    role: assistant
+    text: "On nutrition, roughly where are you now? Any sense of your daily calories or protein?"
+  - id: t11
+    role: user
+    text: "I track loosely — probably 2,700 calories a day, protein is low, maybe 110 grams. Lots of carbs at night."
+  - id: t12
+    role: assistant
+    text: "Let's bump protein toward 170 grams and pull calories to about 2,400 for a slow cut. We'll keep carbs but shift more to around training. Any foods you won't eat?"
+  - id: t13
+    role: user
+    text: "I don't do dairy well — lactose. Otherwise I'll eat anything. I cook most nights, eat out maybe twice a week."
+  - id: t14
+    role: assistant
+    text: "Noted, lactose intolerant, so we'll use lactose-free or plant protein. Sleep and stress — how are those?"
+  - id: t15
+    role: user
+    text: "Sleep is decent, about 7 hours. Work stress spikes around quarter-end. I travel for work one week a month."
+  - id: t16
+    role: assistant
+    text: "We'll build in a lighter travel-week template you can do in a hotel gym. Let me also get a baseline — what are your current big lifts?"
+  - id: t17
+    role: user
+    text: "Bench around 185 for 5, deadlift 275 for 3, and I can overhead press 115. Haven't maxed in a while."
+  - id: t18
+    role: assistant
+    text: "Solid base. We'll trap-bar deadlift to keep your knee happy and progress bench and press. I'll start you with three sets in the 6-to-8 rep range. Does that fit your time budget?"
+  - id: t19
+    role: user
+    text: "Yes, sessions should stay under an hour. I have to be at my desk by 8."
+  - id: t20
+    role: assistant
+    text: "Under 60 minutes, locked. Let's talk progression check-ins — I'd like weekly weigh-ins and a photo check every two weeks."
+  - id: t21
+    role: user
+    text: "Actually, let's revise the running plan. My physio reviewed it and wants me to cut the running volume down to 5 miles per week, all on flat ground, to protect the knee while we rebuild. So make it 5 miles, not the 10 we said."
+  - id: t22
+    role: assistant
+    text: "Understood — updating conditioning to 5 miles per week on flat ground, replacing the earlier 10. I'll add low-impact cycling intervals to make up the conditioning gap without loading the knee."
+  - id: t23
+    role: user
+    text: "Good call on the bike. I actually like rowing too, if that's knee-safe."
+  - id: t24
+    role: assistant
+    text: "Rowing's fine with controlled depth — we'll cap the slide so the knee stays under 90 degrees. I'll add it as a conditioning option. Any supplements you take?"
+  - id: t25
+    role: user
+    text: "Creatine, 5 grams a day, and vitamin D in winter. That's it."
+  - id: t26
+    role: assistant
+    text: "Both fine to continue. Creatine 5g daily is exactly right. I'll draft week one tonight and share it in the app."
+  - id: t27
+    role: user
+    text: "Awesome. Can you also set a reminder for my deload? I like one every fifth week."
+  - id: t28
+    role: assistant
+    text: "Deload scheduled every fifth week, lighter volume and intensity. I'll flag the first one for the week of August 11th."
+  - id: t29
+    role: user
+    text: "Great. Let me know what the first week looks like once it's built."
+  - id: t30
+    role: assistant
+    text: "Will do. Week one: lower on Monday, upper on Tuesday, lower on Wednesday, upper on Thursday, conditioning woven in. I'll have it posted by tonight."
+  - id: t31
+    role: user
+    text: "Before you finalize the conditioning block, I want to make sure the volume matches what my physio approved."
+  - id: t32
+    role: assistant
+    text: "Good — I'll cross-check the conditioning against the physio's guidance before locking it."
+  - id: t33
+    role: user
+    text: "So for the program I'm starting Monday, how many miles of running per week should I actually be doing?"
+  - id: t34
+    role: assistant
+    text: "Let me pull the current running prescription from your plan."
+  - id: t35
+    role: user
+    text: "And remind me what the standing knee restriction is, so I can sanity-check the leg-day exercises you picked?"
+  - id: t36
+    role: assistant
+    text: "Checking your knee constraint on file before I confirm the leg-day selections."
+probes:
+  - id: fitness-coaching-injury-stated-once
+    type: stated_once
+    importance: high
+    question: "What is the client's permanent knee restriction that leg-day programming must respect?"
+    expected_answer: "Right-knee ACL reconstruction — no deep loaded squats past 90 degrees and no single-leg plyometrics on that leg."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t36
+    expected_status: live
+  - id: fitness-coaching-running-supersession
+    type: supersession
+    importance: high
+    question: "What is the client's current weekly running volume in the program?"
+    expected_answer: "5 miles per week on flat ground (reduced from the original 10 miles per week)."
+    plant_turn: t21
+    reference_turns: []
+    target_turns: [t21]
+    distractor_turns: [t9]
+    probe_turn: t34
+    expected_status: live

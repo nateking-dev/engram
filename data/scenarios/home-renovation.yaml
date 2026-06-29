@@ -1,0 +1,134 @@
+id: home-renovation
+title: Kitchen and main-floor renovation planning
+turns:
+  - id: t1
+    role: user
+    text: "We're starting the kitchen reno and I want to open up the wall between the kitchen and the dining room for an open-plan layout."
+  - id: t2
+    role: assistant
+    text: "Before we get into finishes, one thing about that wall: the wall between your kitchen and dining room is load-bearing, so removing it will require a structural beam and an engineer's sign-off, not just a demo crew. We have to design around that from the start."
+  - id: t3
+    role: user
+    text: "Okay, that changes things. Can we still get the open feel even with a beam?"
+  - id: t4
+    role: assistant
+    text: "Absolutely. A flush or dropped LVL beam can span the opening and keep the sightline open. A dropped beam is cheaper; a flush beam costs more but gives a cleaner ceiling. We'll get the engineer to spec the size."
+  - id: t5
+    role: user
+    text: "Let's lean toward the cleaner ceiling if the budget allows. Speaking of which, I want to keep the whole project under $60,000."
+  - id: t6
+    role: assistant
+    text: "A $60,000 cap is workable for a mid-range kitchen plus the structural work, though it'll be tight if we go high on appliances. Let's track it line by line. Cabinets and the beam will be the biggest items."
+  - id: t7
+    role: user
+    text: "For cabinets, I'm torn between custom and semi-custom. What's the tradeoff?"
+  - id: t8
+    role: assistant
+    text: "Custom gives you exact sizes and any finish but runs 30 to 50 percent more and adds weeks of lead time. Semi-custom covers most layouts at a better price. For a budget-conscious project I'd lean semi-custom unless you have odd dimensions."
+  - id: t9
+    role: user
+    text: "Let's go with quartz countertops. I like that they're low maintenance and I don't want to seal stone every year."
+  - id: t10
+    role: assistant
+    text: "Quartz is a solid choice for low upkeep. Budget around $70 to $90 per square foot installed. I'll spec quartz for the counters and we can pick a slab once cabinets are chosen."
+  - id: t11
+    role: user
+    text: "What about permits? I assume the wall work needs one."
+  - id: t12
+    role: assistant
+    text: "Yes. Structural changes, electrical, and plumbing relocations all require permits in your municipality, and the beam work will need an inspection before we close up the ceiling. I'll handle the permit package with the engineer's drawings."
+  - id: t13
+    role: user
+    text: "Good. I'd like a big island with seating for four, that's a priority for us."
+  - id: t14
+    role: assistant
+    text: "An island for four needs roughly 10 feet of run with overhang for stools. We'll want to confirm clearances of at least 42 inches on each side so it doesn't choke the walkways. It can also house the dishwasher and a prep sink."
+  - id: t15
+    role: user
+    text: "A prep sink would be great. Let's plan for that and a pot filler over the range too."
+  - id: t16
+    role: assistant
+    text: "Noted, prep sink in the island and a pot filler at the range. The pot filler means running a water line up the wall, so we'll coordinate that with the plumber during rough-in."
+  - id: t17
+    role: user
+    text: "I've been rethinking the budget. We just got a quote back and I want to raise the cap to $75,000 so we don't have to compromise on the beam and appliances. Let's use $75,000 as the new ceiling."
+  - id: t18
+    role: assistant
+    text: "Understood, I'm updating the budget ceiling to $75,000. That extra room means we can do the flush beam, better appliances, and still keep a contingency. I'll re-baseline the line items against the new number."
+  - id: t19
+    role: user
+    text: "Great. With the new budget, can we afford a panel-ready fridge and a gas range?"
+  - id: t20
+    role: assistant
+    text: "Yes, both fit now. A panel-ready fridge runs $2,500 to $3,500 and a good gas range $2,000 to $4,000. We'll just confirm there's a gas line at the range location or budget to run one."
+  - id: t21
+    role: user
+    text: "Let's check the gas line during demo. For flooring, I want to continue the existing oak hardwood into the kitchen for a seamless look."
+  - id: t22
+    role: assistant
+    text: "Continuing the oak is the right call for flow. We'll weave new boards into the existing field and refinish the whole main floor at the end so the color matches. Plan for the house to be dusty during that step."
+  - id: t23
+    role: user
+    text: "Fine by us. How long should the whole thing take?"
+  - id: t24
+    role: assistant
+    text: "Realistically 10 to 14 weeks from demo to final, with the beam and inspections adding a week or two versus a cosmetic reno. Cabinet lead time is the usual long pole."
+  - id: t25
+    role: user
+    text: "Let's order cabinets early then. For lighting, I want recessed cans plus pendants over the island."
+  - id: t26
+    role: assistant
+    text: "Good combo. We'll lay out the cans on a grid and put two or three pendants over the island on a separate switch. The electrician will set this during rough-in, after the beam is in and before drywall."
+  - id: t27
+    role: user
+    text: "Can we add under-cabinet lighting too?"
+  - id: t28
+    role: assistant
+    text: "Definitely. LED strips under the uppers are inexpensive and make a big difference for task lighting. We'll wire them to a dimmer. Add about $400 to $600 for the run."
+  - id: t29
+    role: user
+    text: "Let's do it. What's the backsplash plan?"
+  - id: t30
+    role: assistant
+    text: "I'd suggest a ceramic subway or a zellige tile to the underside of the uppers, with a full-height slab behind the range if you want a focal point. We'll finalize once the counters are picked."
+  - id: t31
+    role: user
+    text: "Sounds like a plan. Can you summarize the major decisions so far?"
+  - id: t32
+    role: assistant
+    text: "Sure: open the kitchen-dining wall with a flush beam, semi-custom cabinets, quartz counters, an island with prep sink and seating for four, panel-ready fridge and gas range, continuous oak floors, and a layered lighting plan. I'll write up the scope."
+  - id: t33
+    role: user
+    text: "Before you do, remind me what you said about that kitchen-dining wall, the structural detail I need to keep in mind."
+  - id: t34
+    role: assistant
+    text: "Let me look back at what I flagged about that wall."
+  - id: t35
+    role: user
+    text: "And what's our current budget ceiling after the revision, just so the scope doc is right?"
+  - id: t36
+    role: assistant
+    text: "Let me check back through the conversation for the latest budget number we agreed on."
+probes:
+  - id: home-renovation-loadbearing-wall-stated-once
+    type: stated_once
+    importance: high
+    question: "What structural constraint applies to the wall between the kitchen and dining room?"
+    expected_answer: "It is load-bearing, so removing it requires a structural beam and an engineer's sign-off."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t34
+    expected_status: live
+  - id: home-renovation-budget-ceiling-supersession
+    type: supersession
+    importance: high
+    question: "What is our current budget ceiling for the renovation?"
+    expected_answer: "$75,000"
+    plant_turn: t17
+    reference_turns: []
+    target_turns: [t17]
+    distractor_turns: [t5]
+    probe_turn: t36
+    expected_status: live

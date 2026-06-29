@@ -1,0 +1,119 @@
+id: medical-intake
+title: New-patient intake and care coordination
+turns:
+  - id: t1
+    role: assistant
+    text: "Welcome to the clinic portal. I'll help set up your record before your visit with Dr. Reyes on the 14th. Ready when you are."
+  - id: t2
+    role: user
+    text: "For my chart: I'm severely allergic to penicillin — I went into anaphylaxis as a kid and carry an EpiPen. Please get that flagged."
+  - id: t3
+    role: assistant
+    text: "Flagged penicillin anaphylaxis with EpiPen on file. That's now on your allergy banner. What brings you in?"
+  - id: t4
+    role: user
+    text: "Recurring sinus infections, about four this past year. The last one cleared on its own after twelve days."
+  - id: t5
+    role: assistant
+    text: "Noted: four sinus infections in twelve months, most recent self-resolved at day twelve. Any current medications?"
+  - id: t6
+    role: user
+    text: "I take lisinopril 10mg every morning for blood pressure, and a vitamin D supplement, 2000 IU."
+  - id: t7
+    role: assistant
+    text: "Recorded lisinopril 10mg daily and vitamin D 2000 IU. Your last blood pressure reading on record was 128 over 82."
+  - id: t8
+    role: user
+    text: "Dr. Reyes wants to start me on amoxicillin for the next flare-up. Let's plan the dose at 500mg three times daily."
+  - id: t9
+    role: assistant
+    text: "Got it — amoxicillin 500mg three times daily, to begin at the next sinus flare. I've drafted that as a pending order."
+  - id: t10
+    role: user
+    text: "My pharmacy is the Walgreens on Pine Street, not the one downtown. Send anything there."
+  - id: t11
+    role: assistant
+    text: "Updated preferred pharmacy to Walgreens on Pine Street. Anything else for the history?"
+  - id: t12
+    role: user
+    text: "Family history: my father had type 2 diabetes diagnosed at 52, and my mother had high cholesterol."
+  - id: t13
+    role: assistant
+    text: "Added paternal type 2 diabetes at 52 and maternal hyperlipidemia. Do you smoke or drink?"
+  - id: t14
+    role: user
+    text: "No smoking. Maybe two glasses of wine a week. I run about fifteen miles a week."
+  - id: t15
+    role: assistant
+    text: "Logged: nonsmoker, ~2 drinks weekly, ~15 miles running weekly. Insurance still BlueCross plan PPO-4471?"
+  - id: t16
+    role: user
+    text: "Actually, hold on — let's change that amoxicillin plan. Dr. Reyes reviewed it and wants doxycycline 100mg twice daily instead. Use doxycycline going forward."
+  - id: t17
+    role: assistant
+    text: "Understood. Replacing the pending antibiotic order: doxycycline 100mg twice daily instead of the amoxicillin. The amoxicillin draft is cancelled."
+  - id: t18
+    role: user
+    text: "Yes. And update my insurance — it's now Aetna, member ID AET-90233, effective this month."
+  - id: t19
+    role: assistant
+    text: "Insurance updated to Aetna, member ID AET-90233. Copays may differ; I'll re-verify the visit cost."
+  - id: t20
+    role: user
+    text: "Good. Also note I prefer morning appointments, before 10am, because of work."
+  - id: t21
+    role: assistant
+    text: "Preference saved: appointments before 10am. Your visit on the 14th is at 9:15am, which fits."
+  - id: t22
+    role: user
+    text: "One more — I've had knee pain in my right knee for three weeks, worse going downstairs. Probably running-related."
+  - id: t23
+    role: assistant
+    text: "Added right knee pain, three weeks, worse on descent. Dr. Reyes may suggest imaging. I'll put it on the visit agenda."
+  - id: t24
+    role: user
+    text: "Let's hold off on knee imaging for now — give it two more weeks of rest first. Drop it from the agenda."
+  - id: t25
+    role: assistant
+    text: "Removed knee imaging from the agenda; we'll reassess after two weeks of rest."
+  - id: t26
+    role: user
+    text: "What's my appointment time again and which pharmacy did I pick?"
+  - id: t27
+    role: assistant
+    text: "9:15am on the 14th, and your pharmacy is Walgreens on Pine Street."
+  - id: t28
+    role: user
+    text: "Before you finalize the antibiotic order for the pharmacy, double-check it against my chart for safety."
+  - id: t29
+    role: assistant
+    text: "Running the safety cross-check now against your allergy banner and active problems before finalizing."
+  - id: t30
+    role: user
+    text: "The pharmacy is asking which antibiotic Dr. Reyes ordered for my sinus infections. Which one should they fill?"
+  - id: t31
+    role: assistant
+    text: "Confirming the current order before they fill it."
+probes:
+  - id: medical-allergy-stated-once
+    type: stated_once
+    importance: high
+    question: "Before filling any antibiotic, what drug allergy is on this patient's chart?"
+    expected_answer: "Severe penicillin allergy (anaphylaxis, carries an EpiPen)."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t31
+    expected_status: live
+  - id: medical-antibiotic-supersession
+    type: supersession
+    importance: high
+    question: "Which antibiotic is the current order for this patient's sinus infections?"
+    expected_answer: "Doxycycline 100mg twice daily (amoxicillin was cancelled)."
+    plant_turn: t16
+    reference_turns: []
+    target_turns: [t16]
+    distractor_turns: [t8]
+    probe_turn: t31
+    expected_status: live

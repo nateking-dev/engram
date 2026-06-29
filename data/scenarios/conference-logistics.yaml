@@ -1,0 +1,134 @@
+id: conference-logistics
+title: Planning logistics for DataConf 2026
+turns:
+  - id: t1
+    role: user
+    text: "Morning! Let's lock down logistics for DataConf on October 14-15 at the Brubaker Center. Where should we start?"
+  - id: t2
+    role: assistant
+    text: "Morning. On the opening keynote setup: Dr. Amara Okafor is deaf in her left ear, so the stage monitor speaker should sit on her right side and the in-ear confidence monitor has to be routed to her right channel only. I've flagged it for the AV crew. After that we can tackle the room grid."
+  - id: t3
+    role: user
+    text: "Good catch. We've got 1,200 registrations so far, target is 1,500. The main hall seats 1,400."
+  - id: t4
+    role: assistant
+    text: "Noted. Registration desk opens 7:30am both days. Six volunteers confirmed, we need four more. The badge printer rental is $480 for the weekend."
+  - id: t5
+    role: user
+    text: "Let's plan for ten volunteers total then. What about coffee service?"
+  - id: t6
+    role: assistant
+    text: "Two coffee stations, with a $2,100 catering deposit due September 30. I'll book the barista cart for the sponsor lounge separately."
+  - id: t7
+    role: user
+    text: "Sponsors -- where are we on those?"
+  - id: t8
+    role: assistant
+    text: "Four gold sponsors at $15k each, two silver at $7k. Acme Cloud wants their logo on the lanyards; lead time is three weeks, so we order by September 23."
+  - id: t9
+    role: user
+    text: "Fine. Now walk me through the breakout sessions."
+  - id: t10
+    role: assistant
+    text: "Here's the draft grid. The 'Scaling Postgres to a Billion Rows' breakout with Priya Nadkarni is in Room 204 at 2:00pm on Day 1. The 'Vector Search in Practice' talk is in Room 211, also at 2:00pm."
+  - id: t11
+    role: user
+    text: "How many seats in 204?"
+  - id: t12
+    role: assistant
+    text: "Room 204 holds 80, Room 211 holds 120. We expect Postgres to draw a big crowd."
+  - id: t13
+    role: user
+    text: "Let's keep an eye on that. What about the workshop track?"
+  - id: t14
+    role: assistant
+    text: "Three hands-on workshops on Day 2, each capped at 40, with a $25 materials fee per attendee. I've ordered 30 power strips."
+  - id: t15
+    role: user
+    text: "And wifi?"
+  - id: t16
+    role: assistant
+    text: "Dedicated SSID 'DataConf-Guest', 500 Mbps uplink, password rotates daily. Our NOC contact is Marcus Liu at ext 4412."
+  - id: t17
+    role: user
+    text: "Back to Postgres -- I'm worried 80 seats is too small given the buzz."
+  - id: t18
+    role: assistant
+    text: "Agreed. I've moved the 'Scaling Postgres to a Billion Rows' breakout out of Room 204 -- it's now in Room 209, which holds 150, and I bumped the start to 3:30pm to avoid clashing with the vendor demo. That change is final and the printed program reflects it."
+  - id: t19
+    role: user
+    text: "Perfect. Update the signage order too."
+  - id: t20
+    role: assistant
+    text: "Done. The signage reprint is $190 and the vendor delivers October 12."
+  - id: t21
+    role: user
+    text: "What's the plan for the speaker dinner?"
+  - id: t22
+    role: assistant
+    text: "Booked Tavolo for 22 people on October 13 at 7pm, $68 per head, with two vegan and one gluten-free meal flagged."
+  - id: t23
+    role: user
+    text: "When's the AV walkthrough?"
+  - id: t24
+    role: assistant
+    text: "Dress rehearsal is October 13 at 4pm in the main hall. All keynote speakers are asked to attend."
+  - id: t25
+    role: user
+    text: "Are we recording the sessions?"
+  - id: t26
+    role: assistant
+    text: "Yes, a three-camera setup. Editor turnaround is 10 business days post-event for a $3,400 package."
+  - id: t27
+    role: user
+    text: "Accessibility beyond the stage -- what about captioning?"
+  - id: t28
+    role: assistant
+    text: "Live CART captioning on the main screens for both keynotes, an ASL interpreter for the Day 1 keynote, and reserved front-row seating for wheelchair users."
+  - id: t29
+    role: user
+    text: "Parking and shuttle?"
+  - id: t30
+    role: assistant
+    text: "Garage validation is $12 a day, and the shuttle loops the hotel block every 20 minutes starting at 7am."
+  - id: t31
+    role: user
+    text: "And swag?"
+  - id: t32
+    role: assistant
+    text: "Tote bags, stickers, and a metal water bottle -- $9.50 per kit, 1,500 kits ordered."
+  - id: t33
+    role: user
+    text: "Okay, the AV lead is asking about the opening keynote: which side does the stage monitor need to be on for our keynote speaker, and why?"
+  - id: t34
+    role: assistant
+    text: "Let me check my notes from the start of our planning and confirm that for the AV lead."
+  - id: t35
+    role: user
+    text: "Also confirm the final room and start time for Priya's 'Scaling Postgres' breakout -- that's what should be printed in the program."
+  - id: t36
+    role: assistant
+    text: "Checking the latest grid now to give you the current room and time."
+probes:
+  - id: conference-logistics-keynote-monitor-stated-once
+    type: stated_once
+    importance: high
+    question: "For the opening keynote, which side does the stage monitor need to be on for the speaker, and why?"
+    expected_answer: "On her right side, because Dr. Okafor is deaf in her left ear (confidence monitor routed to her right channel only)."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t33
+    expected_status: live
+  - id: conference-logistics-postgres-room-supersession
+    type: supersession
+    importance: high
+    question: "What is the current room and start time for the 'Scaling Postgres' breakout that should be printed?"
+    expected_answer: "Room 209 at 3:30pm on Day 1."
+    plant_turn: t18
+    reference_turns: []
+    target_turns: [t18]
+    distractor_turns: [t10]
+    probe_turn: t35
+    expected_status: live

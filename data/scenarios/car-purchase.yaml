@@ -1,0 +1,140 @@
+id: car-purchase
+title: Negotiating a new SUV purchase
+turns:
+  - id: t1
+    role: user
+    text: "I'm in the market for a new SUV and want help keeping the details straight as I negotiate with a couple of dealers."
+  - id: t2
+    role: assistant
+    text: "Glad to help. Let's capture your requirements, budget, and any hard constraints. What are you driving today and what's prompting the change?"
+  - id: t3
+    role: user
+    text: "I've got an aging sedan, but my needs changed. The new SUV has to have a factory tow package rated to at least 5,000 pounds, because I haul a travel trailer. If it can't tow that, it won't work for me."
+  - id: t4
+    role: assistant
+    text: "Understood — a 5,000 lb factory tow rating is a hard requirement. I'll filter out anything that doesn't meet it. What's your budget?"
+  - id: t5
+    role: user
+    text: "Out-the-door I'd like to stay under 48,000 dollars. I have about 8,000 for a down payment."
+  - id: t6
+    role: assistant
+    text: "Got it, 48k out-the-door with 8k down. Are you financing or paying cash for the rest?"
+  - id: t7
+    role: user
+    text: "Financing. I'm pre-approved at 5.4% APR for 60 months through Summit Credit Union. The dealer can try to beat it."
+  - id: t8
+    role: assistant
+    text: "Noted — 5.4% for 60 months is your benchmark. Which models are you considering?"
+  - id: t9
+    role: user
+    text: "I've narrowed it to the Meridian Atlas. Specifically, I want the SEL trim in Pure White. Let's build the deal around that."
+  - id: t10
+    role: assistant
+    text: "Meridian Atlas SEL in Pure White. Does that trim include the tow package, or is it an add-on?"
+  - id: t11
+    role: user
+    text: "It's a 1,200 dollar add-on on the SEL. The salesperson I'm working with is named Greg at Northgate Meridian."
+  - id: t12
+    role: assistant
+    text: "I'll note Greg at Northgate Meridian. Any trade-in?"
+  - id: t13
+    role: user
+    text: "Yes, my sedan. KBB says it's worth about 6,500. I'd want at least 6,000 from them."
+  - id: t14
+    role: assistant
+    text: "6,000 minimum on the trade. When are you hoping to take delivery?"
+  - id: t15
+    role: user
+    text: "Ideally before July 20th — I have a camping trip booked July 25th."
+  - id: t16
+    role: assistant
+    text: "Delivery by July 20th. I'll keep the timeline tight. Anything on warranty or extras?"
+  - id: t17
+    role: user
+    text: "Actually, I changed my mind on the build — scratch the Pure White SEL. I want to go up to the SEL Premium trim, and in Deep Black Pearl instead. That's the configuration to negotiate now."
+  - id: t18
+    role: assistant
+    text: "Updated — SEL Premium in Deep Black Pearl, replacing the Pure White SEL. The Premium usually bundles the tow package; I'll confirm it still meets your tow requirement."
+  - id: t19
+    role: user
+    text: "Good catch — confirm the tow rating holds on the Premium. The Premium also adds about 2,800 to the MSRP."
+  - id: t20
+    role: assistant
+    text: "I'll verify the tow rating and factor the 2,800 difference into the out-the-door math. We may be close to your 48k ceiling."
+  - id: t21
+    role: user
+    text: "If it's tight, I can stretch the down payment to 9,500. Let's see the numbers."
+  - id: t22
+    role: assistant
+    text: "With 9,500 down we have more room. What color interior do you want?"
+  - id: t23
+    role: user
+    text: "A gray leather interior. And I'd like the all-weather floor mats and a cargo cover."
+  - id: t24
+    role: assistant
+    text: "Gray leather, all-weather mats, cargo cover. I'll add those as line items. Have they quoted a VIN yet?"
+  - id: t25
+    role: user
+    text: "Greg sent a VIN for an in-transit unit: 1MRDA7CK2P0148823. He says it lands at the lot July 8th."
+  - id: t26
+    role: assistant
+    text: "I'll track VIN 1MRDA7CK2P0148823, arriving July 8th. That fits your delivery window."
+  - id: t27
+    role: user
+    text: "What about destination and doc fees? I don't want surprises."
+  - id: t28
+    role: assistant
+    text: "Typical destination is around 1,395 and doc fees vary by state. I'll make sure they're itemized before you sign."
+  - id: t29
+    role: user
+    text: "Smart. I also want a 5-year, 60,000 mile powertrain warranty confirmed in writing."
+  - id: t30
+    role: assistant
+    text: "5-year/60k powertrain warranty in writing. Anything on the extended service contract?"
+  - id: t31
+    role: user
+    text: "Skip the extended contract unless it's under 1,000. Let's not pad the deal."
+  - id: t32
+    role: assistant
+    text: "I'll push back on add-ons over 1,000. Want me to draft an out-the-door target sheet?"
+  - id: t33
+    role: user
+    text: "Yes please. Keep it organized so I can hand it to Greg."
+  - id: t34
+    role: assistant
+    text: "On it. I'll lay out price, fees, trade, and financing in one sheet."
+  - id: t35
+    role: user
+    text: "Before I finalize anything with Greg — what was the one hard, non-negotiable capability I told you the vehicle absolutely must have? I want to verify the build still meets it."
+  - id: t36
+    role: assistant
+    text: "Let me pull that requirement up before you commit."
+  - id: t37
+    role: user
+    text: "And confirm the exact trim and color we're negotiating now, so the order matches."
+  - id: t38
+    role: assistant
+    text: "Checking the current configuration on file."
+probes:
+  - id: car-purchase-tow-requirement-stated-once
+    type: stated_once
+    importance: high
+    question: "What is the buyer's non-negotiable hard requirement for the vehicle?"
+    expected_answer: "A factory tow package rated to at least 5,000 pounds (for towing a travel trailer); it's a dealbreaker without it."
+    plant_turn: t3
+    reference_turns: []
+    target_turns: [t3]
+    distractor_turns: []
+    probe_turn: t35
+    expected_status: live
+  - id: car-purchase-config-supersession
+    type: supersession
+    importance: high
+    question: "Which trim and color is the buyer currently negotiating?"
+    expected_answer: "The SEL Premium in Deep Black Pearl (replacing the earlier Pure White SEL)."
+    plant_turn: t17
+    reference_turns: []
+    target_turns: [t17]
+    distractor_turns: [t9]
+    probe_turn: t37
+    expected_status: live

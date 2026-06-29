@@ -1,0 +1,134 @@
+id: travel-planning
+title: Planning a two-week trip to Japan
+turns:
+  - id: t1
+    role: user
+    text: "We're finally booking our Japan trip for the fall. I want to nail down the rough plan today so we can start buying flights this week."
+  - id: t2
+    role: assistant
+    text: "Great timing. On the paperwork: your passport expires on January 14, 2027, and Japan requires it to be valid for the full duration of your stay, so we're fine for a fall trip but you'll want to renew before any 2027 travel. What dates are you thinking?"
+  - id: t3
+    role: user
+    text: "Let's aim for two weeks in October. I was thinking arrive Tokyo around the 8th and fly home around the 22nd."
+  - id: t4
+    role: assistant
+    text: "Two weeks is a comfortable amount of time. A common split is Tokyo for the first stretch, then a few nights in Kyoto, with day trips to Nara and Osaka. We should plan for a Japan Rail Pass if you'll be doing the Tokyo-Kyoto leg by shinkansen."
+  - id: t5
+    role: user
+    text: "Yes to the rail pass. I'd budget around $1,500 per person for flights, hopefully less if we catch a deal."
+  - id: t6
+    role: assistant
+    text: "That's realistic for economy from the US in October. Let's also pencil in roughly $200 a night for hotels in Tokyo and a bit less in Kyoto. Do you want to mix in a ryokan stay?"
+  - id: t7
+    role: user
+    text: "One ryokan night would be nice, ideally in Hakone with a view of Mt. Fuji. Let's plan for that around the middle of the trip."
+  - id: t8
+    role: assistant
+    text: "Hakone is perfect for that, and it breaks up the Tokyo-to-Kyoto journey nicely. I'll slot a ryokan night around October 14th."
+  - id: t9
+    role: user
+    text: "For the outbound flight, let's lock in departure on October 8th. That gives us the full two weeks before the 22nd return."
+  - id: t10
+    role: assistant
+    text: "Got it, outbound October 8th. I'll structure the itinerary around an October 8th arrival in Tokyo. We can hold the return at the 22nd for now."
+  - id: t11
+    role: user
+    text: "What's the deal with getting cash there? I hear Japan is still pretty cash-heavy."
+  - id: t12
+    role: assistant
+    text: "It's improved a lot, but yes, carry cash for smaller restaurants, temples, and rural areas. 7-Eleven ATMs reliably take foreign cards. I'd pull out about 30,000 yen on arrival and top up as you go."
+  - id: t13
+    role: user
+    text: "Good to know. Let's also book a food tour in Tokyo, maybe an evening one in the Shinjuku area early in the trip."
+  - id: t14
+    role: assistant
+    text: "An evening izakaya tour in Shinjuku is a great first-night activity. I'd put it on October 9th so you're not jet-lagged on arrival day."
+  - id: t15
+    role: user
+    text: "Perfect. And I want to do the teamLab digital art museum, my partner is really excited about that one."
+  - id: t16
+    role: assistant
+    text: "teamLab Planets gets busy, so we should pre-book a timed entry. Mornings are calmer. I'll suggest a slot on October 10th."
+  - id: t17
+    role: user
+    text: "Actually, I need to change the outbound flight. A work conflict came up, so let's move our departure to October 10th instead of the 8th. We'll keep the return on the 22nd and just compress the front end."
+  - id: t18
+    role: assistant
+    text: "Understood, I'm updating the plan so the outbound departure is now October 10th. That shortens the Tokyo opening by two days, so I'll tighten the first-leg activities. The teamLab and food tour will shift a couple of days later to accommodate the new arrival."
+  - id: t19
+    role: user
+    text: "That works. Does the rail pass still make sense with the shorter trip?"
+  - id: t20
+    role: assistant
+    text: "Still worth it if you're doing Tokyo to Kyoto round-trip plus a Hakone leg. A 7-day pass should cover the heaviest travel window. We'll activate it the day you head toward Hakone."
+  - id: t21
+    role: user
+    text: "Let's plan the Kyoto portion. I really want to see Fushimi Inari early in the morning before the crowds."
+  - id: t22
+    role: assistant
+    text: "Fushimi Inari at sunrise is magical and far less crowded. Plan to be there by 7am. We can pair it with Tofukuji nearby if the maples are turning."
+  - id: t23
+    role: user
+    text: "Yes, fall colors would be a bonus. What about Nara, is a day trip enough?"
+  - id: t24
+    role: assistant
+    text: "A day trip to Nara is plenty for the big sights: the deer park, Todaiji's great Buddha, and Kasuga Taisha. It's about 45 minutes from Kyoto by train."
+  - id: t25
+    role: user
+    text: "Let's slot Nara mid-Kyoto-stay. And I'd like one splurge dinner in Kyoto, kaiseki ideally."
+  - id: t26
+    role: assistant
+    text: "A kaiseki dinner is a wonderful Kyoto tradition. These book out early, sometimes a month ahead, so we should reserve as soon as the dates firm up. Budget around 15,000 to 20,000 yen per person."
+  - id: t27
+    role: user
+    text: "Noted. Should we get pocket wifi or just eSIMs?"
+  - id: t28
+    role: assistant
+    text: "For two people, eSIMs are usually cheaper and simpler now, no device to return. A 14-day data eSIM runs about $25 per person. Pocket wifi only wins if you have several devices to share."
+  - id: t29
+    role: user
+    text: "eSIMs it is. Let's also leave the last full day open for shopping and packing before we fly out."
+  - id: t30
+    role: assistant
+    text: "Smart to keep the last day light. I'll leave October 21st mostly open, with the return flight on the 22nd. Anything else before we start pricing flights?"
+  - id: t31
+    role: user
+    text: "I think that's the skeleton. Can you start a checklist of what to book first?"
+  - id: t32
+    role: assistant
+    text: "Will do. Priority order: flights, the kaiseki reservation, the ryokan in Hakone, teamLab timed entry, then the rail pass closer to departure. I'll draft that out."
+  - id: t33
+    role: user
+    text: "One reminder for me before we wrap: what's the exact expiration date on my passport, since you mentioned it earlier?"
+  - id: t34
+    role: assistant
+    text: "Let me check back through our conversation for the passport detail you mentioned."
+  - id: t35
+    role: user
+    text: "And remind me, what did we finally settle on as the outbound departure date after the work conflict?"
+  - id: t36
+    role: assistant
+    text: "Let me look back at where we landed on the outbound flight after the change."
+probes:
+  - id: travel-planning-passport-expiry-stated-once
+    type: stated_once
+    importance: high
+    question: "What is the exact expiration date on my passport?"
+    expected_answer: "January 14, 2027"
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t34
+    expected_status: live
+  - id: travel-planning-outbound-date-supersession
+    type: supersession
+    importance: high
+    question: "What is our current outbound departure date?"
+    expected_answer: "October 10th"
+    plant_turn: t17
+    reference_turns: []
+    target_turns: [t17]
+    distractor_turns: [t9]
+    probe_turn: t36
+    expected_status: live

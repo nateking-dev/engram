@@ -1,0 +1,137 @@
+id: event-catering
+title: Catering a corporate anniversary gala
+turns:
+  - id: t1
+    role: assistant
+    text: "Thanks for choosing Birch & Vine Catering for the Halcyon Corp 20th-anniversary gala. I've got the date as Saturday, October 18th at the Riverside Pavilion. Let's lock in the details."
+  - id: t2
+    role: user
+    text: "Quick thing on the catering: our CEO's wife, who's seated at the head table, has a life-threatening shellfish allergy — anaphylaxis level. Nothing with shellfish or shellfish stock anywhere near her plate, and watch for cross-contamination."
+  - id: t3
+    role: assistant
+    text: "Understood, and flagged as a top priority for the chef. I'll make sure the head-table service line is shellfish-free with separate prep. Now, what style of service were you imagining — plated, family-style, or stations?"
+  - id: t4
+    role: user
+    text: "Plated dinner for the main, but let's do passed hors d'oeuvres during the cocktail hour from 6 to 7."
+  - id: t5
+    role: assistant
+    text: "Great. Passed hors d'oeuvres 6 to 7, then a plated dinner. For passed bites I'd suggest the fig-and-prosciutto crostini, the wild mushroom tartlet, and a citrus-cured salmon. Sound good?"
+  - id: t6
+    role: user
+    text: "Love those three. Add the goat cheese stuffed peppadews too — those were a hit at the summer retreat."
+  - id: t7
+    role: assistant
+    text: "Four passed items it is. For the plated main, our most popular pairing is a braised short rib with a roasted vegetable wellington as the vegetarian option. Shall I price that?"
+  - id: t8
+    role: user
+    text: "Yes. Let's plan for a headcount of 180 guests. The invite list isn't fully back yet but that's our working number."
+  - id: t9
+    role: assistant
+    text: "Booking 180 for now. At 180, the short rib and wellington plated package runs $94 per head, so roughly $16,920 for the mains. Bar and rentals are separate. I'll hold that estimate."
+  - id: t10
+    role: user
+    text: "Sounds right. For the bar, we want a hosted open bar but beer and wine only — no spirits. Budget cap of $4,500 on alcohol."
+  - id: t11
+    role: assistant
+    text: "Beer and wine open bar, capped at $4,500. I'll bring a sparkling, a chardonnay, a pinot noir, and two local IPAs. We can swap any of those. Dessert plans?"
+  - id: t12
+    role: user
+    text: "A small anniversary cake for the photo moment, plus a dessert station with mini pastries. The cake should say 'Halcyon at 20' in gold."
+  - id: t13
+    role: assistant
+    text: "Lovely — a presentation cake reading 'Halcyon at 20' in gold leaf, plus a mini-pastry station. I'll have the pastry chef confirm the gold-leaf surcharge, about $40."
+  - id: t14
+    role: user
+    text: "Fine. Linens should be deep navy with the gold napkins we used last year. And we'll need a microphone and small stage for the founder's toast at 8pm."
+  - id: t15
+    role: assistant
+    text: "Navy linens, gold napkins, mic and a 12-by-8 riser staged for an 8pm toast. The Pavilion provides the riser; I'll add the AV to the rental sheet. Any dietary needs beyond the head table?"
+  - id: t16
+    role: user
+    text: "We'll have about 15 vegetarians and 6 gluten-free guests — I'll confirm exact numbers later. Mark roughly that."
+  - id: t17
+    role: assistant
+    text: "Noted ~15 vegetarian, ~6 gluten-free, to be confirmed. I'll plan plated alternates for those counts. Anything on timing for dinner service?"
+  - id: t18
+    role: user
+    text: "Dinner plated and served by 7:45 so the toast lands at 8. Coffee and the dessert station open at 8:30."
+  - id: t19
+    role: assistant
+    text: "Service by 7:45, dessert and coffee at 8:30. That all fits the room's 11pm hard-out. I'll route the timeline to the captain."
+  - id: t20
+    role: user
+    text: "Quick change on the numbers: the RSVPs closed higher than expected. Update the final headcount to 215 guests, not 180. Please re-quote everything to 215."
+  - id: t21
+    role: assistant
+    text: "Updating the guaranteed headcount to 215. At 215 the plated mains come to about $20,210, and I'll scale hors d'oeuvres, rentals, and staffing to match. The bar cap stays at $4,500 unless you'd like to raise it."
+  - id: t22
+    role: user
+    text: "Keep the bar cap as is, we'll watch consumption. Bump the passed-item count proportionally though."
+  - id: t23
+    role: assistant
+    text: "Will do — passed bites scaled for 215. I'll add one more server and a second bartender to keep cocktail-hour lines short. Parking or valet?"
+  - id: t24
+    role: user
+    text: "Valet for the head table and board members, about 20 cars. General lot for everyone else."
+  - id: t25
+    role: assistant
+    text: "Valet for ~20 VIP vehicles, general self-park otherwise. I'll coordinate with the Pavilion's valet vendor. Floral centerpieces — are those through us or a separate florist?"
+  - id: t26
+    role: user
+    text: "Separate florist, Petal & Stem. They'll deliver low arrangements by 4pm so they don't block sightlines to the stage."
+  - id: t27
+    role: assistant
+    text: "Got it, Petal & Stem delivering low centerpieces by 4pm. I'll make sure our setup crew leaves the tables ready for them. Do you want a tasting before we finalize?"
+  - id: t28
+    role: user
+    text: "Yes, a tasting two weeks out. Tuesday evenings work best for me and the events lead, Priya."
+  - id: t29
+    role: assistant
+    text: "I'll book a Tuesday-evening tasting two weeks before the gala and invite Priya. I'll send three date options tomorrow."
+  - id: t30
+    role: user
+    text: "Perfect. Also, send the final invoice to accounts payable, not to me — ap@halcyon.example."
+  - id: t31
+    role: assistant
+    text: "Final invoice routed to ap@halcyon.example. Deposit is 40% to confirm; the balance is due five business days before the event."
+  - id: t32
+    role: user
+    text: "We'll wire the deposit Friday. Before that, I want to make sure the kitchen is set up correctly for the final count."
+  - id: t33
+    role: assistant
+    text: "Sounds good. I'll have the full BEO drafted by Thursday so you can review before the deposit goes out."
+  - id: t34
+    role: user
+    text: "The chef is finalizing prep sheets and needs the official number to cook to. What's the guaranteed guest count I should give the kitchen?"
+  - id: t35
+    role: assistant
+    text: "Pulling the confirmed guarantee for the kitchen now."
+  - id: t36
+    role: user
+    text: "And one safety check — remind me what the head-table dietary restriction is so the chef can brief the line cooks?"
+  - id: t37
+    role: assistant
+    text: "Checking the head-table allergy note before I brief the chef."
+probes:
+  - id: event-catering-allergy-stated-once
+    type: stated_once
+    importance: high
+    question: "What is the head-table guest's dietary restriction the chef must brief the line on?"
+    expected_answer: "A life-threatening (anaphylaxis-level) shellfish allergy — no shellfish or shellfish stock, and avoid cross-contamination."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t37
+    expected_status: live
+  - id: event-catering-headcount-supersession
+    type: supersession
+    importance: high
+    question: "What is the guaranteed guest count the kitchen should cook to?"
+    expected_answer: "215 guests (revised up from the earlier working number of 180)."
+    plant_turn: t20
+    reference_turns: []
+    target_turns: [t20]
+    distractor_turns: [t8]
+    probe_turn: t35
+    expected_status: live

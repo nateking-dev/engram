@@ -1,0 +1,140 @@
+id: moving-relocation
+title: Coordinating a long-distance household move
+turns:
+  - id: t1
+    role: assistant
+    text: "Thanks for booking Northstar Moving for your relocation. I'll build the job sheet so the crew and dispatch have everything. Let's start with anything that needs special handling."
+  - id: t2
+    role: user
+    text: "One item to call out: we have my grandmother's antique grandfather clock — it's irreplaceable, over a hundred years old, with a hand-painted face. It needs a custom crate, has to be transported upright at all times, and not laid flat. It's the piece on this move that gets white-glove handling."
+  - id: t3
+    role: assistant
+    text: "Understood, and flagged as the highest-priority item: antique grandfather clock, custom crate, transported upright at all times, never laid flat. I'll assign our specialty crating team to it. Now, where are we moving from and to?"
+  - id: t4
+    role: user
+    text: "From our place at 47 Larkspur Lane, Asheville, to a new house in Denver. Three-bedroom, about 2,200 square feet of stuff."
+  - id: t5
+    role: assistant
+    text: "Got it — origin 47 Larkspur Lane in Asheville, destination Denver, roughly a 3-bedroom load. What's your target move date?"
+  - id: t6
+    role: user
+    text: "We're aiming for packing on July 9th and the truck loading July 10th. Delivery a few days after."
+  - id: t7
+    role: assistant
+    text: "Packing the 9th, load the 10th, with an estimated Denver delivery window of the 14th to 16th given the distance. Does that work?"
+  - id: t8
+    role: user
+    text: "That works. We'll do a full-pack service — I don't want to box anything myself except a few personal bags."
+  - id: t9
+    role: user
+    text: "Send the delivery to the new address: 1820 Cottonwood Court, Denver. That's where the truck should unload."
+  - id: t10
+    role: assistant
+    text: "Delivery set to 1820 Cottonwood Court, Denver. Full-pack service for everything but your personal bags. Roughly how many boxes' worth — any large or unusual items besides the clock?"
+  - id: t11
+    role: user
+    text: "A baby grand piano, a Peloton, a 75-inch TV, and a chest freezer in the garage. The freezer needs to be emptied and defrosted the day before."
+  - id: t12
+    role: assistant
+    text: "Noted: baby grand piano, Peloton, 75-inch TV, and a chest freezer to be defrosted the day prior. The piano gets specialty handling like the clock. Any items you're taking yourself?"
+  - id: t13
+    role: user
+    text: "Jewelry, laptops, and important documents go in our car. Also two cats riding with us, so the house needs to stay openable until we leave."
+  - id: t14
+    role: assistant
+    text: "Understood — high-value items and pets travel with you. I'll have the crew leave a clear path and keep the front rooms last. Do you need packing materials delivered ahead?"
+  - id: t15
+    role: user
+    text: "Yes, drop boxes and wardrobe cartons a couple days early. We have a lot of clothes and artwork."
+  - id: t16
+    role: assistant
+    text: "I'll schedule a materials drop on the 7th, including wardrobe and mirror/art cartons. Now an access question I need for dispatch — any constraints loading the truck at origin?"
+  - id: t17
+    role: user
+    text: "Important access note: our street, Larkspur, has a low-clearance bridge at the entrance — 11 feet 6 inches. A full-size 53-foot trailer cannot get in. You'll need a shuttle truck or a smaller box truck to reach the house."
+  - id: t18
+    role: assistant
+    text: "Critical — logged: Larkspur has an 11-foot-6 low-clearance bridge, no 53-foot trailer access, shuttle or box truck required at origin. I'll have dispatch assign a shuttle. What about parking at the Denver end?"
+  - id: t19
+    role: user
+    text: "Cottonwood Court is a cul-de-sac, but a full truck can get in there fine. No clearance issues on that side."
+  - id: t20
+    role: assistant
+    text: "Good, full access in Denver. I'll note that. Do you want full-value protection coverage or released-value?"
+  - id: t21
+    role: user
+    text: "Full-value protection, and declare the piano and clock specifically. What's the valuation per pound on full coverage?"
+  - id: t22
+    role: assistant
+    text: "Full-value protection at $6 per pound, with the clock and piano separately scheduled at their appraised values. Please send appraisals when you have them. Estimated weight is about 9,000 pounds."
+  - id: t23
+    role: user
+    text: "I'll get appraisals this week. The clock is appraised around $12,000, by the way."
+  - id: t24
+    role: assistant
+    text: "Scheduling the clock at $12,000 appraised. I'll add the piano figure when it's in. Storage — do you need any, or is it a direct delivery?"
+  - id: t25
+    role: user
+    text: "Direct delivery, no storage. We close on the Denver house before delivery."
+  - id: t26
+    role: user
+    text: "Actually, a change on the schedule: our closing slipped, so the move date has to change. Push loading to July 17th, not the 10th. Packing the 16th, loading the 17th. Use those dates going forward."
+  - id: t27
+    role: assistant
+    text: "Updated the move dates — packing July 16th, loading July 17th, replacing the earlier 9th/10th. The Denver delivery window shifts to roughly the 21st to 23rd. I'll re-confirm the crew and shuttle for the new dates."
+  - id: t28
+    role: assistant
+    text: "I'll also move the materials drop to the 14th to match. Does the new window still work for your travel?"
+  - id: t29
+    role: user
+    text: "Yes, we adjusted our drive to match. Make sure the shuttle is still booked for the new load day."
+  - id: t30
+    role: assistant
+    text: "Shuttle re-booked for the new load day at origin. I'll send a revised confirmation today. Anything else for the crew?"
+  - id: t31
+    role: user
+    text: "Just remind the team the garage freezer has to be defrosted the night before, and label the cats' room 'do not enter.'"
+  - id: t32
+    role: assistant
+    text: "I'll put both on the crew sheet: defrost the freezer the prior night, do-not-enter on the cats' room. The job sheet is nearly complete."
+  - id: t33
+    role: user
+    text: "Before you send dispatch the final schedule, I want to be sure the load day on the order is the corrected one."
+  - id: t34
+    role: assistant
+    text: "Understood — I'll confirm the corrected load day before dispatch locks it in."
+  - id: t35
+    role: user
+    text: "So what's the loading date dispatch should put on the work order?"
+  - id: t36
+    role: assistant
+    text: "Pulling the current loading date from the order now."
+  - id: t37
+    role: user
+    text: "And remind the crew lead which single item gets the white-glove, never-lay-flat treatment, and how it must be handled."
+  - id: t38
+    role: assistant
+    text: "Checking the special-handling item on file before I brief the crew lead."
+probes:
+  - id: moving-relocation-fragile-stated-once
+    type: stated_once
+    importance: high
+    question: "Which item needs white-glove handling, and how must it be transported?"
+    expected_answer: "The irreplaceable 100-year-old antique grandfather clock — custom-crated, transported upright at all times, never laid flat."
+    plant_turn: t2
+    reference_turns: []
+    target_turns: [t2]
+    distractor_turns: []
+    probe_turn: t38
+    expected_status: live
+  - id: moving-relocation-date-supersession
+    type: supersession
+    importance: high
+    question: "What is the current loading date dispatch should put on the work order?"
+    expected_answer: "July 17th (loading was moved from the original July 10th after the closing slipped)."
+    plant_turn: t26
+    reference_turns: []
+    target_turns: [t26]
+    distractor_turns: [t6]
+    probe_turn: t36
+    expected_status: live

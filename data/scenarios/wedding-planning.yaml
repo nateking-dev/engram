@@ -1,0 +1,140 @@
+id: wedding-planning
+title: Planning a fall wedding
+turns:
+  - id: t1
+    role: user
+    text: "We're starting to plan our wedding for next fall and could use help keeping track of everything. There are a lot of moving pieces."
+  - id: t2
+    role: assistant
+    text: "Happy to help. Let's start with the essentials — guest count, budget, and any must-knows. What's your rough headcount?"
+  - id: t3
+    role: user
+    text: "We're expecting about 120 guests. Also, my fiancee's brother, Daniel, has a life-threatening anaphylactic shellfish allergy — even cross-contamination can send him to the ER. That has to shape every catering decision."
+  - id: t4
+    role: assistant
+    text: "Noted, that's critical. I'll treat shellfish as fully off-limits, including shared fryers and garnishes. What's your target budget?"
+  - id: t5
+    role: user
+    text: "We're working with about 45,000 dollars total. We'd like to keep catering under 18,000."
+  - id: t6
+    role: assistant
+    text: "Reasonable. Photography and venue tend to be the next biggest line items. Have you set a date?"
+  - id: t7
+    role: user
+    text: "We're aiming for Saturday, October 17th, 2026. My cousin Priya is tentatively our day-of coordinator."
+  - id: t8
+    role: assistant
+    text: "Great. October dates book fast, so we should secure a venue soon. Any venues you're considering?"
+  - id: t9
+    role: user
+    text: "Yes — we've basically decided on the Lakeside Pavilion. It holds 150 and the deposit is 3,000 dollars. Let's plan around that space."
+  - id: t10
+    role: assistant
+    text: "Lakeside Pavilion it is. I'll pencil in the 3,000 deposit and a 150 capacity. Do they have in-house catering or do we bring our own?"
+  - id: t11
+    role: user
+    text: "We bring our own. I was thinking we use Maribel's Kitchen — they did my sister's wedding."
+  - id: t12
+    role: assistant
+    text: "I'll reach out to Maribel's about a tasting. We'll flag the dietary requirements up front. What about the cake?"
+  - id: t13
+    role: user
+    text: "A three-tier lemon-elderflower cake from Sweet Atelier, roughly 600 dollars. And we want a live jazz trio for the reception."
+  - id: t14
+    role: assistant
+    text: "Got it — Sweet Atelier cake and a jazz trio. I'll start a vendor list. Have you thought about invitations and save-the-dates?"
+  - id: t15
+    role: user
+    text: "Save-the-dates should go out by July 1st. Invitations by August 15th with RSVPs due September 10th."
+  - id: t16
+    role: assistant
+    text: "I'll set those deadlines: July 1 save-the-dates, August 15 invites, September 10 RSVP cutoff. Anything on florals?"
+  - id: t17
+    role: user
+    text: "Actually, big change — scratch the Lakeside Pavilion. They had a double-booking and cancelled on us. We've signed with the Hillcrest Barn instead. That's our venue now — please update everything to Hillcrest Barn."
+  - id: t18
+    role: assistant
+    text: "Understood — Hillcrest Barn is now the confirmed venue, replacing Lakeside Pavilion. Does the capacity or date still work?"
+  - id: t19
+    role: user
+    text: "Same date, October 17th. Hillcrest holds 140, which is fine. Their deposit was 3,500 and they require us to be out by 11pm."
+  - id: t20
+    role: assistant
+    text: "Noted, 11pm end time at Hillcrest. For florals, what were you thinking?"
+  - id: t21
+    role: user
+    text: "Seasonal — dahlias and eucalyptus, ideally under 2,000 dollars. Bloom and Stem is the florist."
+  - id: t22
+    role: assistant
+    text: "Bloom and Stem, dahlias and eucalyptus, 2,000 cap. Photography next — any leads?"
+  - id: t23
+    role: user
+    text: "We loved a photographer named Theo Vance, about 4,200 for eight hours including an engagement shoot."
+  - id: t24
+    role: assistant
+    text: "I'll add Theo Vance at 4,200. Do you want a videographer too?"
+  - id: t25
+    role: user
+    text: "Maybe a small one, budget permitting. Let's prioritize photography. What's our running total look like?"
+  - id: t26
+    role: assistant
+    text: "Roughly: catering 18,000, venue deposit 3,500, cake 600, florals 2,000, photo 4,200, music to be decided. We're tracking well under 45,000 so far."
+  - id: t27
+    role: user
+    text: "Good. For the menu, we're leaning toward a plated dinner with a chicken and a vegetarian option."
+  - id: t28
+    role: assistant
+    text: "Plated dinner, chicken and vegetarian mains. I'll make sure the kitchen protocols are airtight given the dietary constraints. Drinks?"
+  - id: t29
+    role: user
+    text: "A limited bar — wine, beer, and two signature cocktails. No need for top-shelf liquor."
+  - id: t30
+    role: assistant
+    text: "Limited bar with two signature cocktails. Want me to draft a day-of timeline next?"
+  - id: t31
+    role: user
+    text: "Yes, and let's plan for a 4pm ceremony, 5pm cocktail hour, 6pm dinner."
+  - id: t32
+    role: assistant
+    text: "4pm ceremony, 5pm cocktails, 6pm dinner. I'll build that out. Anything else before I summarize?"
+  - id: t33
+    role: user
+    text: "Let's also book a hair and makeup artist — Lena, about 800 for the bridal party."
+  - id: t34
+    role: assistant
+    text: "Lena for hair and makeup at 800, added. I think we have a solid plan forming."
+  - id: t35
+    role: user
+    text: "Before I send the final catering brief to Maribel's — remind me of the critical dietary restriction I told you about for one of our guests. I don't want this to slip."
+  - id: t36
+    role: assistant
+    text: "Checking the record now before you send the brief."
+  - id: t37
+    role: user
+    text: "And confirm for me: which venue are we actually getting married at? I want to make sure the contract matches."
+  - id: t38
+    role: assistant
+    text: "Let me verify the current venue on file before you sign."
+probes:
+  - id: wedding-planning-guest-allergy-stated-once
+    type: stated_once
+    importance: high
+    question: "Before finalizing the catering, what severe dietary restriction does one of the guests have?"
+    expected_answer: "Daniel (the fiancee's brother) has a life-threatening anaphylactic shellfish allergy; shellfish and cross-contamination must be avoided."
+    plant_turn: t3
+    reference_turns: []
+    target_turns: [t3]
+    distractor_turns: []
+    probe_turn: t35
+    expected_status: live
+  - id: wedding-planning-venue-supersession
+    type: supersession
+    importance: high
+    question: "Which venue is the wedding currently booked at?"
+    expected_answer: "Hillcrest Barn (it replaced the cancelled Lakeside Pavilion)."
+    plant_turn: t17
+    reference_turns: []
+    target_turns: [t17]
+    distractor_turns: [t9]
+    probe_turn: t37
+    expected_status: live
